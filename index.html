@@ -26,7 +26,8 @@
         <h2 class="container__h2">Bill</h2>
         <span class="container__span">Can't be zero</span>
       </div>
-        <input class="container__value container__value--bill" type="number" placeholder="0">
+      <input class="container__value container__value--bill" type="text" inputmode="decimal" pattern="\d*\.?\d*" placeholder="0">
+
     </section>
     <section class="container">
       <h2 class="container__h2 container__h2--plus-margin-bottom">Select Tip %</h2>
@@ -53,7 +54,7 @@
       </label>
       <label class="container__button container__button--custom">
         <input name="option" type="radio">
-        <input class="container__custom-input" type="number" placeholder="Custom">
+        <input class="container__custom-input" type="text" inputmode="decimal" pattern="\d*\.?\d*" placeholder="Custom">
       </label>
       </div>
     </section>

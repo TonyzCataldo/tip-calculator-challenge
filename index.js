@@ -84,10 +84,12 @@ function calcular(){
  }
 }
 function removerZerosEsquerda(input) {
+    if (!input.value.endsWith(".")){
     input.value = input.value.replace(/^0+(?=\d)/, '');
-}
+}}
 
 function validarInput(event) {
+    console.log("Tecla:", event.key, "| Valor atual:", event.target.value);
     if (
         event.key === 'Backspace' || 
         event.key === 'Delete' || 
@@ -98,10 +100,11 @@ function validarInput(event) {
     }
 
     // ✅ Regex atualizado para permitir apenas um ponto decimal e números válidos
-    if (!/^\d*(\.\d*)?$/.test(event.target.value + event.key)) {
+   if (!/^\d*(\.\d*)?$/.test(event.target.value + event.key)) {
         event.preventDefault(); // Bloqueia valor inválido
 
-}}
+}
+}
 
 
 
