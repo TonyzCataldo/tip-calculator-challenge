@@ -1,30 +1,30 @@
 // Captura todos os inputs radio
-let radios = document.querySelectorAll('input[name="opcao"]');
-let customInput = document.querySelector("#custom-btn .input-number");
-let customLabel = document.querySelector("#custom-btn");
-let numberInputs = document.querySelectorAll('input[class="valor"]');
-let spans = document.querySelectorAll('.span-vrm')
-let bill = document.getElementById('bill');
-let people = document.getElementById('people');
+let radios = document.querySelectorAll('input[name="option"]');
+let customInput = document.querySelector(".container__custom-input");
+let customLabel = document.querySelector(".container__button--custom");
+let numberInputs = document.querySelectorAll('.container__value');
+let spans = document.querySelectorAll('.container__span')
+let bill = document.querySelector('.container__value--bill');
+let people = document.querySelector('.container__value--people');
 let selecionado = null;
 let valorSelecionado = null;
-const resetBtn = document.getElementById("disabled-btn");
-let containerTipAmount = document.getElementById("tip-amount-person-result")
- let containerTotalAmount = document.getElementById("total-amount-person-result")
+const resetBtn = document.querySelector(".result__btn--button");
+let containerTipAmount = document.querySelector(".results-content__result--tip")
+ let containerTotalAmount = document.querySelector(".results-content__result--total")
 
 
 function atualizarValor() {
     radios.forEach(radio => {
-        radio.parentElement.classList.remove("botao-clicado");
+        radio.parentElement.classList.remove("container__button--selected");
     });
-    customLabel.classList.remove("custom-border");
-    selecionado = document.querySelector('input[name="opcao"]:checked');
+    customLabel.classList.remove(".container__button--border");
+    selecionado = document.querySelector('input[name="option"]:checked');
 
 
     if (selecionado) { 
         valorSelecionado = parseFloat(selecionado.value);
         console.log("Valor selecionado:", valorSelecionado);
-        selecionado.parentElement.classList.add("botao-clicado");
+        selecionado.parentElement.classList.add("container__button--selected");
         customInput.value = "";
     }
     
@@ -46,12 +46,12 @@ function resetar(){
     selecionado = null;
     valorSelecionado = null;
     customInput.value = "";
-    bill.parentElement.querySelector('.number-of-people').querySelector(".span-vrm").classList.remove("span-vrm-see"); 
-    people.parentElement.querySelector('.number-of-people').querySelector(".span-vrm").classList.remove("span-vrm-see"); 
-    customLabel.classList.remove("custom-border")
+    bill.parentElement.querySelector('.container__caption').querySelector(".container__span").classList.remove("container__span--visible"); 
+    people.parentElement.querySelector('.container__caption').querySelector(".container__span").classList.remove("container__span--visible"); 
+    customLabel.classList.remove("container__button--border")
     radios.forEach(radio => {
         radio.removeAttribute('checked');
-        radio.parentElement.classList.remove("botao-clicado");
+        radio.parentElement.classList.remove("container__button--selected");
     });
     containerTipAmount.innerHTML = "$0.00";
     containerTotalAmount.innerHTML = "$0.00";
@@ -61,9 +61,9 @@ function resetar(){
 function verificarNumber() {
     if (Number(this.value) === 0 && this.value !== "") {
         // ✅ Verifica se o elemento existe antes de tentar acessar
-        this.parentElement.querySelector('.number-of-people')?.querySelector(".span-vrm")?.classList.add("span-vrm-see");
+        this.parentElement.querySelector('.container__caption')?.querySelector(".container__span")?.classList.add("container__span--visible");
     } else {
-        this.parentElement.querySelector('.number-of-people')?.querySelector(".span-vrm")?.classList.remove("span-vrm-see");
+        this.parentElement.querySelector('.container__caption')?.querySelector(".container__span")?.classList.remove("container__span--visible");
     }
 }
 
@@ -128,9 +128,9 @@ radios.forEach(radio => {
 customInput.addEventListener("focus", function() {
     radios.forEach(radio => {
         radio.checked = false;
-        radio.parentElement.classList.remove("botao-clicado");
+        radio.parentElement.classList.remove("container__button--selected");
     });
-    customLabel.classList.add("custom-border");
+    customLabel.classList.add("container__button--border");
     valorSelecionado = 0;
     selecionado = customInput
 });
