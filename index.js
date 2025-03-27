@@ -50,7 +50,7 @@ function resetar(){
     people.parentElement.querySelector('.container__caption').querySelector(".container__span").classList.remove("container__span--visible"); 
     customLabel.classList.remove("container__button--border")
     radios.forEach(radio => {
-        radio.removeAttribute('checked');
+        radio.checked = false;;
         radio.parentElement.classList.remove("container__button--selected");
     });
     containerTipAmount.innerHTML = "$0.00";

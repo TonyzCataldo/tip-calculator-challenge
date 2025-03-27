@@ -44,7 +44,7 @@ body{
 
 .full__logo{
   @include respond-to(desktop){
-    margin-top: 5rem;
+    margin-top: 7rem;
     margin-bottom: 2rem;
   }
 }
@@ -275,6 +275,7 @@ input:focus{
 
     &:disabled{
         background-color: $disabled-color;
+        color: #00474b6b;
      }
     }
 }

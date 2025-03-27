@@ -43,7 +43,7 @@ body {
 
 @media (min-width: 1024px) {
   .full__logo {
-    margin-top: 5rem;
+    margin-top: 7rem;
     margin-bottom: 2rem;
   }
 }
@@ -264,6 +264,7 @@ input:focus {
 }
 .result__btn:disabled {
   background-color: #0D686D;
+  color: rgba(0, 71, 75, 0.4196078431);
 }
 
 .results-content {
