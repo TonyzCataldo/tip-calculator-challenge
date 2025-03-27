@@ -36,6 +36,7 @@ body{
         height: 30.063rem;
         gap: 3rem;
         max-width: 1100px;
+        min-width: 920px;
     }
     
     
@@ -195,6 +196,7 @@ input:focus{
     }
     &--custom{
         background-color: $gray-light;
+        justify-content: end;
      &:hover{
       background-color: $gray-light;
      }
@@ -203,7 +205,7 @@ input:focus{
 
     }
     &__custom-input{
-    width: 100%;
+    width: 82%;
     height: 100%;
     background-color: $gray-light;
     border: none;
