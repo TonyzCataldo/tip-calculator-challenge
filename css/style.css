@@ -250,6 +250,7 @@ input:focus {
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 28px;
+  cursor: pointer;
 }
 @media (min-width: 1024px) {
   .result__btn {
@@ -261,10 +262,12 @@ input:focus {
 .result__btn--button {
   width: 100%;
   margin: 0;
+  cursor: pointer;
 }
 .result__btn:disabled {
   background-color: #0D686D;
   color: rgba(0, 71, 75, 0.4196078431);
+  cursor: default;
 }
 
 .results-content {

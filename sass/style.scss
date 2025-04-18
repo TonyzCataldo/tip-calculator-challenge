@@ -263,11 +263,13 @@ input:focus {
     &--button {
       width: 100%;
       margin: 0;
+      cursor: pointer;
     }
 
     &:disabled {
       background-color: $disabled-color;
       color: #00474b6b;
+      cursor: default;
     }
   }
 }
